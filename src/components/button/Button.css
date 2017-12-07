@@ -1,0 +1,39 @@
+.Button {
+    position: relative;
+}
+
+.Button button.button-plus:after,
+.Button button.button-plus {
+    height: 60px;
+    width: 60px;
+    font-weight: 600;
+    font-size: 50px;
+    background-color: #D4145A;
+    color: #F5A8F0;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    -webkit-box-shadow: 2px 4px 10px -2px rgba(0,0,0,0.64);
+    -moz-box-shadow: 2px 4px 10px -2px rgba(0,0,0,0.64);
+    box-shadow: 2px 4px 10px -2px rgba(0,0,0,0.64);
+}
+
+.Button button.button-plus:hover span,
+.Button button.button-plus:hover {
+    zoom: 1.01;
+}
+
+.Button button.button-plus:active,
+.Button button.button-plus:target,
+.Button button.button-plus:before,
+.Button button.button-plus:focus {
+    zoom: 0.99;
+    outline: none;
+    -webkit-box-shadow: 2px 4px 3px -3px rgba(0,0,0,0.69);
+    -moz-box-shadow: 2px 4px 3px -3px rgba(0,0,0,0.69);
+    box-shadow: 2px 4px 3px -3px rgba(0,0,0,0.69);
+}
+
+.Button button.button-plus span {
+    text-align:  center;
+}
