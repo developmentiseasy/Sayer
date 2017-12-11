@@ -1,28 +1,27 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { addCommentToItemBy} from '../../../../actions/addItem/addItemAction'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
 
 class Item extends Component {
+
+  handleClick = () => {
+    this.props.onClick(this.props.item)
+  }
 
   render() {
     return (
       <tr
         className="Item"
+        onClick={this.handleClick}
       >
-        <td>
+        <td onClick={this.onOpenComments}>
           {this.props.item.title}
         </td>
         <td>
-          <button
-            onClick={() => this.props.deleteItem(this.props.item.id)}
-          >
+          <div>
+            {(this.props.item.comments).length}
+          </div>
+          <button onClick={() => this.props.deleteItem(this.props.item.id)}>
             Delete
-          </button>
-          <button onClick={() => {
-            this.props.addCommentToItemBy({comment: 'test'}, this.props.item.id)
-          }}>COmmeT TUTa!
           </button>
         </td>
       </tr>
@@ -33,15 +32,7 @@ class Item extends Component {
 Item.propTypes = {
   item: PropTypes.object,
   deleteItem: PropTypes.func,
+  onClick: PropTypes.func,
+  onOpenComments: PropTypes.bool,
 }
-
-function mapDispatchToProps(dispatch) {
-  return {
-    addCommentToItemBy: bindActionCreators(addCommentToItemBy, dispatch),
-  }
-}
-
-export default connect(
- null,
-  mapDispatchToProps
-)(Item)
+export default Item

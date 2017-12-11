@@ -1,9 +1,13 @@
-import { ADD_COMMENT_TO_ITEM_BY_ID, ADD_ITEM, DELETE_ITEM } from '../../constants/action-constants/addItemConstants'
+import {
+  ADD_COMMENT_TO_ITEM_BY_ID,
+  ADD_ITEM,
+  DELETE_ITEM,
+} from '../../constants/actionConstants/addItemConstants'
 
 export function addItem(item) {
   return {
     type: ADD_ITEM,
-    payload: item
+    payload: item,
   }
 }
 
@@ -14,7 +18,7 @@ export function deleteItem(id) {
   }
 }
 
-export function addCommentToItemBy(comment, id) {
+export function addCommentToItemById(comment, id) {
   return {
     type: ADD_COMMENT_TO_ITEM_BY_ID,
     comment: comment,

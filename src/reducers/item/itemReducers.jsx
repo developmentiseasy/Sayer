@@ -1,10 +1,10 @@
 import {
   ADD_COMMENT_TO_ITEM_BY_ID,
   ADD_ITEM,
-  DELETE_ITEM
-} from '../../constants/action-constants/addItemConstants'
+  DELETE_ITEM,
+} from '../../constants/actionConstants/addItemConstants'
 import * as shortid from 'shortid'
-import { clone, filter, map } from 'lodash'
+import { clone, filter, map, find } from 'lodash'
 
 export default function itemReducer(state = {
   itemsArr: [],
@@ -43,6 +43,7 @@ export default function itemReducer(state = {
         itemsArr: newItems,
       }
     }
+
     default:
       return state
   }
